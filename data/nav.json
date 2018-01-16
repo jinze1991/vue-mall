@@ -1,0 +1,19 @@
+{
+  "status":1,
+  "result":{
+    "list":[
+      {
+        "navName":"home"
+      },
+      {
+        "navName":"best"
+      },
+      {
+        "navName":"brand"
+      },
+      {
+        "navName":"event"
+      }
+    ]
+  }
+}

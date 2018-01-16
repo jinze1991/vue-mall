@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1, minimum-scale=1"/>
+       <title>일반형 쇼핑몰</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/swiper-4.1.0.min.css">
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <div class="container">
+		<div class="header">
+			<div class="search flex_center"><input class="a_search flex_center" placeholder="请搜索商品名" type="search"/></div>
+			<div class="main_nav nav">
+				<ul class="ul_nav flex_between">
+					<li class="li_nav" v-for="(item,index) in navList" v-bind:class="{'on':index==currentIndex}">
+						<a class="btn_nav flex_center" href="javascript:void(0);" @click="currentIndex=index">
+							<p class="text_nav">{{item.navName}}</p>
+						</a>
+					</li>
+				</ul>
+			</div><!-- end of .nav -->
+			<div class="main_swiper">
+				<div class="swiper-container swiper swiper_main">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide text_hide" v-for="item in mainSwiper" :style="{backgroundImage:'url('+item.imgURL+')'}">
+							<a class="a" href="#"></a>    
+						</li>
+					</ul>
+					<ol class="swiper-pagination"></ol>      
+				</div><!-- end of swiper -->
+			</div><!-- end of .main_swiper -->	
+		</div><!-- end of header -->
+		<ul class="ul_section">
+			<li class="li_section section_1" v-if="currentIndex==0">
+				<div class="category">
+					<ul class="ul_category">
+						<li class="li_category" v-for="(item,index) in categoryList">
+							<a class="btn_category flex_column_center" @click="categoryIndex=index" href="javascript:void(0);">
+								<div class="icon_category text_hide" :class="{'on':index==categoryIndex}"></div>
+								<p class="text_category">{{item.categoryName}}</p>
+							</a>
+						</li>
+					</ul>
+				</div><!-- end of .category -->
+				<div class="article">
+					<div class="h2">best</div>
+					<ul class="ul_list_1">
+					
+						<li class="li_list_1" v-for="(item,index) in filterBest">
+							<a class="a_list_1 flex_between" href="details.html">
+								<div class="img_list_1 text_hide" :style="{backgroundImage:'url('+item.imgURL+')'}">
+									<div class="icon_num flex_center">{{index+1}}</div>
+								</div>
+								<div class="text_list_1">
+									<p class="h4_list_1">{{item.brandName}}</p>
+									<p class="direction_list_1">{{item.productName}}</p>
+									<div class="price_list_1">
+										<div class="d_list_1">{{item.dc}}</div>
+										<div class="p_list_3 flex_center"><p class="p_list_3_num">{{item.price | money()}}</p>元</div>
+									</div>
+									<div class="sold">已售<p class="sold_num">{{item.soldNum}}</p>件</div>
+
+								</div>
+							</a>
+						</li>
+					</ul>
+					<div class="more">
+						<div class="more_box">
+							<a class="btn_more" href="best.html">more</a>
+						</div>
+					</div>
+				</div><!-- end of .article_best -->
+				<div class="article">
+					<div class="h2">推荐品牌</div>
+					<div class="list_2">
+						<div class="brand_swiper" id="brand_swiper_3">
+							<div class="brand_swiper_text">
+								<div class="swiper-container swiper swiper_brand" id="brand_swiper_1">
+									<ul class="swiper-wrapper">
+										<li class="swiper-slide flex_between" v-for="item in brandList">
+											<div class="swiper_left">
+												<div class="logo">{{item.brandName}}</div>
+												<a class="btn_logo flex_center" href="#">
+													<div class="text_logo">all</div>
+													<div class="btn_icon_go text_hide"></div>
+												</a>
+											</div>
+											<div class="swiper_right">
+												brand<br/> 
+												goods image
+											</div>	
+										</li>
+									</ul>   
+								</div><!-- end of swiper -->
+							</div><!-- end of #brand_swiper_1 -->
+							<div class="brand_swiper_img">
+								<div class="swiper-container swiper swiper_brand" id="brand_swiper_2">
+									<ul class="swiper-wrapper">
+										<li class="swiper-slide" v-for="item in brandList">
+											<ol class="ol_swiper_img flex_around">
+												<li class="li_swiper_img text_hide" v-for="part in item.parts" :style="{backgroundImage:'url('+part.imgURL+')'}"><a class="a_swiper_img" href="#"></a></li>
+											</ol>
+										</li>
+									</ul>
+									<ol class="swiper-pagination"></ol>      
+								</div><!-- end of swiper -->
+							</div><!-- end of #brand_swiper_2 -->	
+						</div><!-- end of .brand_swiper -->		
+					</div><!-- end of .list_2 -->
+				</div><!-- end of .article_brand -->
+				<div class="article">
+					<div class="h2">海外直购 推荐商品</div>
+					<ul class="ul_list_3">
+						<li class="li_list_3" v-for="(item,index) in recommendList">
+							<a class="a_list_3">
+								<div class="img_list_3 text_hide" :style="{backgroundImage:'url('+item.imgURL+')'}"></div>
+								<div class="text_list_3 flex_column_center">
+									<p class="direction_list_3">{{item.productName}}</p>
+									<div class="price_list_3 flex_between">
+										<div class="p_list_3 flex_center"><p class="p_list_3_num">{{item.price | money()}}</p>元</div>
+										<p class="d_list_3">{{item.dc}}%</p>
+									</div>
+								</div>
+							</a>
+							<div class="ad_banner" v-if="index==1">
+								<a class="a_ad_banner">
+									<div class="img_ad_banner text_hide" style="background-image: url(images/list_3.png)"></div>
+								</a>
+							</div>
+						</li>
+						
+					</ul><!-- end of .ul_list_3 -->
+				</div><!-- end of .article_recommend -->
+			</li><!-- end of .section_1 -->
+			<li class="li_section section_2" v-if="currentIndex==1">
+				best
+			</li><!-- end of .section_2 -->
+			<li class="li_section section_3" v-if="currentIndex==2">
+				<div class="section_3_nav nav">
+					<ul class="ul_nav flex_between">
+						<li class="li_nav" v-for="(item,index) in brandNav" :class="{'on':index==brandNavIdx}">
+							<a class="btn_nav flex_center" href="javascript:void(0);" @click="brandNavIdx=index">
+								<p class="text_nav">{{item.navName}}</p>
+							</a>
+						</li>
+					</ul>
+				</div><!-- end of .nav -->
+				<ul class="article_2 article_brand">
+					<li class="li_article_brand week_order" v-if="brandNav==0">
+						<ul class="ul_article_2">
+							<li class="li_article_2" v-for="(item,index) in brandWeek">
+								<a class="a_article_2 flex_between" href="#">
+									<div class="info_article_2 flex_row_center">
+										<div class="num_article_2">{{index+1}}</div>
+										<div class="img_article_2 text_hide" :style="{backgroundImage:'url('+item.imgURL+')'}"></div>
+										<div class="text_article_2">
+											<p class="n_article_2">品牌名称</p>
+											<p class="c_article_2">时尚服饰，配件</p>
+										</div>
+									</div>
+									<div class="favor flex_column_center">
+										<div class="icon_favor text_hide"></div>
+										<div class="num_favor">564</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li class="li_article_brand like_order" v-if="brandNavIdx==1">like</li>
+					<li class="li_article_brand sold_order" v-if="brandNavIdx==2">sold</li>
+				
+				</ul>
+				
+					
+				
+			</li><!-- end of .section_3 -->
+			<li class="li_section section_4" v-if="currentIndex==3">
+				event
+			</li><!-- end of .section_4 -->
+		</ul><!-- end of .ul_section -->
+		
+    </div><!-- end of .container -->
+    <div class="tabBar">
+			<ul class="ul_tab flex_between">
+				<li class="li_tab">
+					<a class="btn_tab flex_column_center on" href="index.html">
+						<div class="icon_tab icon_tab_1 text_hide"></div>
+						<p class="text_tab">home</p>
+					</a>
+				</li>
+				<li class="li_tab">
+					<a class="btn_tab flex_column_center" href="index.html">
+						<div class="icon_tab icon_tab_2 text_hide"></div>
+						<p class="text_tab">category</p>
+					</a>
+				</li>
+				<li class="li_tab">
+					<a class="btn_tab flex_column_center" href="index.html">
+						<div class="icon_tab icon_tab_3 text_hide"></div>
+						<p class="text_tab">cart</p>
+					</a>
+				</li>
+				<li class="li_tab">
+					<a class="btn_tab flex_column_center" href="index.html">
+						<div class="icon_tab icon_tab_4 text_hide"></div>
+						<p class="text_tab">my</p>
+					</a>
+				</li>
+			</ul>
+		</div><!-- end of .tabBar -->
+	<script type="text/javascript" src="js/lib/vue.min.js"></script>
+    <script type="text/javascript" src="js/lib/vue-resource.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/swiper-4.1.0.min.js"></script> 
+    <script type="text/javascript">
+    	// swiper
+		var swiperMain = new Swiper('.swiper_main', {
+			pagination: {
+			    el: '.swiper-pagination',
+			  },
+			loop:true,
+			autoplay: {
+				delay: 4000,
+				disableOnInteraction: false,
+			},
+			speed:200,
+		});
+		
+		var Swiper1 = new Swiper('#brand_swiper_1',{
+			loop:true,
+			autoplay: {
+				delay: 4000,
+				disableOnInteraction: false,
+			},
+			speed:400,
+			effect : 'fade',
+			});
+
+		var Swiper2 = new Swiper('#brand_swiper_2',{
+			pagination: {
+			    el: '.swiper-pagination',
+			  },
+			loop:true,
+			speed:400,
+			controller: {
+			    control: Swiper1, //控制Swiper1
+			  },
+		});
+
+		Swiper1.controller.control = Swiper2;//Swiper1控制Swiper2，需要在Swiper2初始化后
+		Swiper2.controller.control = Swiper1;//Swiper2控制Swiper1，需要在Swiper1初始化后
+			
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

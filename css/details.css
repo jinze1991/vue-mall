@@ -1,0 +1,122 @@
+@charset "utf-8";
+
+.container{padding-bottom:2.9rem;}
+
+/* details.html */
+
+/* .section */
+	/* article _1*/
+.no_top_article{
+	margin-top:0;
+}
+
+.li_list_4 .img_list_1{
+	width:100%;height:20rem;
+}
+
+.box_list_4{
+	position:relative;
+	padding:1.28rem 1rem;
+}
+
+.text_list_4{
+	width:60%;
+}
+
+.direction_list_4{
+	font-size:0.8rem;margin-bottom:1.2rem;line-height: 1.28rem;
+}
+
+.d_list_4{
+	font-size:1.28rem;color:#95989A;
+	margin-right:1.28rem;
+}
+
+.p_list_4{font-size: 0.64rem;}
+.p_list_4_num{
+	font-size: 1.28rem;font-weight: bold;
+}
+
+.box_list_4 .sold{
+	top:1.28rem;right:1rem;
+}
+
+/* ul_btn_bottom */
+
+.ul_btn_bottom{
+	width: 100%;height:2.45rem;
+	background-color:#F8F8F8;
+}
+.li_btn_bottom{
+	width:100%;height:1.5rem;
+	border-right: 1px solid #D6D6D6;
+}
+
+.li_btn_bottom:last-child{border-right: none;}
+
+.a_btn_bottom{width:100%;height:100%;}
+
+.text_btn_bottom{
+	font-size: 0.8rem;color:#95989A;
+}
+
+.num_btn_bottom{
+	font-size:0.8rem;color:#95989A;margin-left:0.4rem;
+}
+
+
+	/* article _2 */
+.purchase_info{padding:1.06rem;}
+.list_purchase_info{align-items: flex-start;margin-bottom:0.5rem;}
+.title_purchase_info{width:23%;}
+.text_purchase_info{width:77%;}
+
+	/* article_3 */
+.article_3 .h2{
+	font-size:0.64rem;color:#95989A;
+	border-bottom:1px solid #EBEBEB;
+}
+.detail_img{width:100%;height:51rem;}
+
+.article_3 .ul_btn_bottom{background-color:#95989A;}
+.article_3 .text_btn_bottom{font-size:0.85rem;color:#fff;}
+
+	/* .article_4 */
+.brand_box{padding:1.44rem 0;}
+.img_brand_logo{
+	width:5.176rem;height:5.176rem;
+	margin-bottom:1.2rem;
+}
+.brand_name{
+	font-size: 1.17rem;color:#95989A;
+	margin-bottom:0.4rem;
+}
+.brand_type{
+	font-size: 0.64rem;color:#D6D6D6;
+}
+
+/* container_btn_bottom */
+.container_btn_bottom{
+	width:100%;height:2.9rem;
+	position:fixed;bottom:0;left:0;
+	background-color:#F8F8F8;
+}
+.ul_container_btn_bottom {width:100%;height:100%;}
+
+.li_container_btn_bottom{width:100%;height:100%;}
+
+.buy_btn{background-color:#95989A;}
+
+.text_container_btn_bottom{font-size: 0.96rem;color:#95989A;}
+
+.buy_btn .text_container_btn_bottom{color:#fff;} 
+
+
+
+
+
+
+
+
+
+

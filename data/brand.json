@@ -1,0 +1,39 @@
+{
+  "status":1,
+  "result":{
+    "list":[
+      {
+        "brandName":"brand logo1",
+        "parts":[
+        	{"imgURL":"images/resort_1.png"},
+        	{"imgURL":"images/resort_1.png"},
+        	{"imgURL":"images/resort_1.png"}
+        ]
+      },
+      {
+        "brandName":"brand logo2",
+        "parts":[
+        	{"imgURL":"images/resort_1.png"},
+        	{"imgURL":"images/resort_1.png"},
+        	{"imgURL":"images/resort_1.png"}
+        ]
+      },
+      {
+        "brandName":"brand logo3",
+        "parts":[
+        	{"imgURL":"images/resort_1.png"},
+        	{"imgURL":"images/resort_1.png"},
+        	{"imgURL":"images/resort_1.png"}
+        ]
+      },
+      {
+        "brandName":"brand logo4",
+        "parts":[
+        	{"imgURL":"images/resort_1.png"},
+        	{"imgURL":"images/resort_1.png"},
+        	{"imgURL":"images/resort_1.png"}
+        ]
+      }
+    ]
+  }
+}

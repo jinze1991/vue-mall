@@ -1,0 +1,41 @@
+{
+  "status":1,
+  "result":{
+    "list":[
+     	{
+     		"imgURL":"images/goods_1.png",
+     		"imgURL":"images/goods_1.png",
+     		"brandName":"品牌名称",
+     		"productName":"바이오더마 클랜징워터 센시비오500ml/1인4개 한정",
+     		"dc":"35%",
+     		"price":32000,
+     		"soldNum":2387
+     	}, 
+     	{
+     		"imgURL":"images/goods_1.png",
+     		"brandName":"品牌名称",
+     		"productName":"바이오더마 클랜징워터 센시비오500ml/1인4개 한정",
+     		"dc":"35%",
+     		"price":32000,
+     		"soldNum":2387
+     	}, 
+     	{
+     		"imgURL":"images/goods_1.png",
+     		"brandName":"品牌名称",
+     		"productName":"바이오더마 클랜징워터 센시비오500ml/1인4개 한정",
+     		"dc":"35%",
+     		"price":32000,
+     		"soldNum":2387
+     	},
+     	{
+     		"imgURL":"images/goods_1.png",
+     		"brandName":"品牌名称",
+     		"productName":"바이오더마 클랜징워터 센시비오500ml/1인4개 한정",
+     		"dc":"35%",
+     		"price":32000,
+     		"soldNum":2387
+     	}
+    ]
+  }
+
+}
