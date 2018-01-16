@@ -13,8 +13,6 @@
   "keywords": [
     "vue"
   ],
-  "author": "meixing",
-  "license": "ISC",
   "dependencies": {
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
@@ -27,14 +25,14 @@
     "vue": "^2.5.13",
     "vue-resource": "^1.3.5"
   },
+  "author": "meixing",
+  "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "http://github.com/openshift/nodejs-ex.git"
+    "url": "git@github.com:jinze1991/vue-mall.git"
   },
-  "author": "Steve Speicher <sspeiche@gmail.com>",
-  "license": "CC-BY-1.0",
   "bugs": {
-    "url": "http://github.com/openshift/nodejs-ex/issues"
+    "url": "https://github.com/jinze1991/vue-mall/issues"
   },
-  "homepage": "http://github.com/openshift/nodejs-ex"
+  "homepage": "https://github.com/jinze1991/vue-mall"
 }
